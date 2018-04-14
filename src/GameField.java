@@ -7,9 +7,10 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener {
-    private final int SIZE = 320;
+    private final int SIZE_X = 640;
+    private final int SIZE_Y = 320;
     private final int DOT_SIZE = 16;
-    private final int ALL_DOTS = 400;
+    private final int ALL_DOTS = 800;
     private Image dot;
     private Image apple;
     private int appleX;
@@ -66,10 +67,10 @@ public class GameField extends JPanel implements ActionListener {
             }
         } else{
             String str = "Game Over!!!";
-            Font f = new Font("Arial",14,Font.BOLD);
+            Font f = new Font("Arial",Font.BOLD,28);
             g.setColor(Color.white);
             g.setFont(f);
-            g.drawString(str,125,SIZE/2);
+            g.drawString(str,240,SIZE_Y/2);
         }
     }
 
@@ -105,13 +106,13 @@ public class GameField extends JPanel implements ActionListener {
                 inGame = false;
             }
         }
-        if(x[0] > SIZE){
+        if(x[0] > SIZE_X){
             inGame = false;
         }
         if(x[0] < 0){
             inGame = false;
         }
-        if(y[0] > SIZE){
+        if(y[0] > SIZE_Y){
             inGame = false;
         }
         if(y[0] < 0){
